@@ -1,0 +1,34 @@
+{
+  "manifest_version": 3,
+  "name": "AI Abuse Analyzer",
+  "version": "10.0",
+
+  "permissions": [
+    "storage"
+  ],
+
+  "host_permissions": [
+    "http://127.0.0.1:5000/*",
+    "http://localhost:5000/*",
+    "https://www.instagram.com/*",
+    "https://instagram.com/*"
+  ],
+
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.instagram.com/*",
+        "https://instagram.com/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+
+  "web_accessible_resources": [
+    {
+      "resources": ["dashboard.html"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}

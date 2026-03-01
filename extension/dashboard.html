@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Moderation Dashboard</title>
+
+    <script src="chart.js"></script>
+
+    <style>
+        body {
+            background: #0f172a;
+            color: white;
+            font-family: Arial, sans-serif;
+            padding: 30px;
+            margin: 0;
+        }
+
+        h2 {
+            margin-bottom: 10px;
+        }
+
+        button {
+            background: #ef4444;
+            color: white;
+            border: none;
+            padding: 8px 14px;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background: #dc2626;
+        }
+
+        .stats {
+            margin-bottom: 25px;
+            line-height: 1.8;
+        }
+
+        .stats span {
+            font-weight: bold;
+        }
+
+        .chart-container {
+            width: 400px;
+            height: 400px;
+            margin: 30px auto;
+        }
+
+        .card {
+            background: #1e293b;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            transition: 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+        }
+
+        small {
+            color: #cbd5e1;
+        }
+    </style>
+</head>
+
+<body>
+
+<h2>AI Moderation Dashboard</h2>
+<button id="clearBtn">Clear Reports</button>
+
+<div class="stats">
+    Total Reports: <span id="totalCount">0</span><br>
+    Threat: <span id="threatCount">0</span><br>
+    Toxicity: <span id="toxicityCount">0</span><br>
+    Insult / Harassment: <span id="insultCount">0</span><br>
+    Identity Hate: <span id="hateCount">0</span>
+</div>
+
+<div class="chart-container">
+    <canvas id="reportChart"></canvas>
+</div>
+
+<div id="reports"></div>
+
+<script src="dashboard.js"></script>
+
+</body>
+</html>
